@@ -1,0 +1,53 @@
+*{font-family: sans-serif}
+.corpo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulos, .linhasDosVotos {
+    width: 15vw;
+    margin: 5px;
+    font-size: 11pt;
+}
+
+.tabela {
+    width: 70%;
+    min-height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.td {
+    height: 25vh;
+    width: 25vw;
+    background-color: white;
+    border-left: 6px solid purple;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin: 15px;
+    box-shadow: 0em 0.5em 0.5em gray;
+}
+
+.candidatoEVice{
+    display: flex;
+    flex-direction: column;
+}
+
+.nVotos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

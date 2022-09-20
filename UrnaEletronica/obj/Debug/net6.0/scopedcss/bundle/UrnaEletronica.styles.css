@@ -1,0 +1,54 @@
+/* _content/UrnaEletronica/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+main[b-fezb1crc2p] {
+    padding: 0px;
+    width: 99vw;
+    height: 100vh;
+}
+
+.container[b-fezb1crc2p] {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+}
+
+a.navbar-brand[b-fezb1crc2p] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-fezb1crc2p] {
+  color: #0077cc;
+}
+
+.btn-primary[b-fezb1crc2p] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-fezb1crc2p], .nav-pills .show > .nav-link[b-fezb1crc2p] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-fezb1crc2p] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-fezb1crc2p] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-fezb1crc2p] {
+  box-shadow: 0 0.25em .75em gray;
+}
+
+button.accept-policy[b-fezb1crc2p] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+

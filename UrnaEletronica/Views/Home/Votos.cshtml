@@ -1,0 +1,34 @@
+﻿@model IEnumerable<UrnaEletronica.API.Models.Candidato>
+<link rel="stylesheet" href="~/css/votos.css" asp-append-version="true" />
+@{
+
+}
+<div class="corpo">
+    <h1>Total de Votos por Candidato</h1>
+    <div class="tabela">
+        @foreach (var item in Model)
+        {
+
+            <div class="td">
+                <div class="candidatoEVice">
+
+                    <div class="linhasDosVotos">
+                        <label>Candidato</label>
+                        <h4>Nome Presidente</h4>
+                    </div>
+                    <div class="linhasDosVotos">
+                        <label>Vice</label>
+                        <h5>@item.NomeCandidato</h5>
+                    </div>
+                </div>
+                <div class="nVotos linhasDosVotos">
+                    <label style="height: 20%;">Votos recebidos</label>
+                    <div style="width: 100%;">
+                        <h1> @item.Votos</h1>
+                        </div>
+                    </div>
+            </div>
+        }
+    </div>
+</div>
+

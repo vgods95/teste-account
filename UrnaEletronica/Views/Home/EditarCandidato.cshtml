@@ -1,0 +1,22 @@
+﻿@model IEnumerable<UrnaEletronica.API.Models.Candidato>
+<link rel="stylesheet" href="~/css/alteracao.css" asp-append-version="true" />
+<div class="divEdicao">
+    <h1>Alteração de dados do candidato</h1>
+    <form class="formularioAlteracao">
+        @foreach (var item in Model)
+        {
+            <label for="nomeCandidato">Nome do Candidato: </label>
+            <input name="nomeCandidato" id="nomeCandidato" type="text" value="@item.NomeCandidato"/>
+
+            <label for="nomeVice">Nome do Vice: </label>
+            <input id="nomeVice" name="nomeVice" type="text" value="@item.NomeVice" />
+
+            <label for="legenda">Legenda: </label>
+            <input id="legendaEdicao" name="legendaEdicao" type="text" value="@item.Legenda" />
+        }
+        <div class="botoes">
+            <button asp-controller="Candidato" asp-action="EditarCandidato"  type="submit" style="background-color: green;">Salvar Alteração</button>
+            <button asp-controller="Home" asp-action="Index" style="background-color: red;">Cancelar</button>
+        </div>
+    </form>
+</div>
