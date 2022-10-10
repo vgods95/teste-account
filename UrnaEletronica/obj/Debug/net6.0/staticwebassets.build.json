@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z80BZYLbOdOzJ1rPUJSkoro2NsBbPjOnszgqWY1fHvA=",
+  "Hash": "gU31aXuOY42AnmNwlN4jmfTVlVkY1kYaB+Ms9JRQLdg=",
   "Source": "UrnaEletronica",
   "BasePath": "_content/UrnaEletronica",
   "Mode": "Default",
@@ -11,11 +11,11 @@
       "Version": 2,
       "Source": "UrnaEletronica.API",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;Configuration;Platform;TargetFramework;RuntimeIdentifier",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;Configuration;Platform;TargetFramework;RuntimeIdentifier"
     }
   ],
   "DiscoveryPatterns": [
