@@ -1,0 +1,18 @@
+﻿@model IEnumerable<UrnaEletronica.API.Models.Candidato>
+<link rel="stylesheet" href="~/css/carregarCandidato.css" asp-append-version="true" />
+
+
+<div class="corpo" style="width: 100%; height: 100%; ">
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <div class="divCandidato">
+                <input id="idCandidato" hidden value="@item.IdCandidato">
+                <label>Presidente: <span>@item.NomeCandidato</span></label>
+
+                <label>Vice Presidente: <span>@item.NomeVice</span></label>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<UrnaEletronica.API.Models.Candidato>
+<div class="divCorpo">
+    <h1>Lista de candidatos</h1>
+    <div class="candidatos">
+        <table class="table">
+            <thead>
+                <tr class="tituloTabela">
+                    <th>Candidato</th>
+                    <th>Vice</th>
+                    <th>Legenda</th>
+                    <th>Data Cadastro</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.NomeCandidato</td>
+                        <td>@item.NomeVice</td>
+                        <td>@item.Legenda</td>
+                        <td>@item.DataCadastro</td>
+                        <form asp-controller="Home" asp-action="EditarCandidato" enctype="multipart/form-data">
+                            <input name="id" type="number" value="@item.IdCandidato" hidden="true" />
+                        <td>
+                            <button class="btnEditarExcluir" type="submit"><i class="material-icons" onclick="editar()" style="color: green; cursor: pointer;">edit</i></button>
+                        </td>
+                        </form>
+                        <td>
+                            <button class="btnEditarExcluir"><i class="material-icons" style="color: red;">close</i></button>
+                        </td>
+
+                    </tr>
+                }
+            </thead>
+        </table>
+        <div class="btnDoRodape">
+            <div class="divBtnAdicionar">
+                <a class="btnAdicionar" asp-controller="Home" asp-action="CadastrarCandidato">Novo candidato</a>
+            </div>
+            <button class="btnVoltar" onclick="fecharListaCandidatos()">Voltar</button>
+        </div>
+    </div>
+</div>

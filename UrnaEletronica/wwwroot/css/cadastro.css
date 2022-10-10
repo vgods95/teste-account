@@ -1,0 +1,38 @@
+.divEdicao {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formularioAlteracao {
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid purple;
+    border-left: 15px solid purple;
+    border-radius: 10px;
+    background-color: #ede8e8;
+    box-shadow: 0em 0.5em 0.5em gray;
+}
+
+input{
+    width: 50%;
+    height: 5vh;
+}
+
+button {
+    height: 5vh;
+    border: none;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+h1{
+    margin-bottom: 5vh;
+}
