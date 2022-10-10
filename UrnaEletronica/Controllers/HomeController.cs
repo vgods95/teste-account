@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -11,23 +14,26 @@ using UrnaEletronica.Models;
 
 namespace UrnaEletronica.Controllers
 {
+   
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UrnaEletronicaContext _contexto;
         private readonly ICandidato _candidato;
+        private readonly IVoto _voto;
 
-        public HomeController(ILogger<HomeController> logger, UrnaEletronicaContext contexto, ICandidato candidato)
+        public HomeController(ILogger<HomeController> logger, UrnaEletronicaContext contexto, ICandidato candidato, IVoto voto)
         {
             _logger = logger;
             _contexto = contexto;
             _candidato = candidato;
+            _voto = voto;
         }
 
         public IActionResult Index()
         {
             var lista = _contexto.Candidato.ToList();
-            return View(); 
+            return View(lista); 
         }
 
         [HttpPost]
@@ -41,7 +47,7 @@ namespace UrnaEletronica.Controllers
         public ActionResult CarregarCandidato(int legenda)
         {
             var carregarCandidato = _contexto.Candidato.Where(c => c.Legenda == legenda);
-            return PartialView(carregarCandidato);
+            return Json(carregarCandidato);
         }
 
         [HttpGet]
@@ -51,24 +57,24 @@ namespace UrnaEletronica.Controllers
             return View(lista);
         }
 
+        [HttpGet("Votos")]
         public IActionResult Votos()
-        {
-            var lista = _contexto.Votos.ToList();
-            var candidato = _contexto.Candidato.ToList();
-            var ordenar = lista.OrderByDescending(c => c.QuantidadeDeVotos);
-            return View(ordenar);
+        { 
+            var votos = _contexto.Votos;
+            var votosOrdenados = votos.OrderByDescending(v => v.QuantidadeDeVotos);
+            return View(votos.ToList());
         }
 
-        [HttpGet("Cadastrar")]
+        [HttpGet("CadastrarCandidato")]
         public ActionResult CadastrarCandidato()
         {
             return View();
         }
 
         [HttpPost(Name = "CadastroDeCandidato")]
-        public async Task<IActionResult> CadastroDeCandidato([FromBody] Candidato candidado)
+        public async Task<IActionResult> CadastroDeCandidato(Candidato candidato)
         {
-            _candidato.Adicionar(candidado);
+            _candidato.Adicionar(candidato);
             if (await _candidato.Salvar())
             {
                 return Json("candidato cadastrado");

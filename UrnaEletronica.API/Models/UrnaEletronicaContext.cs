@@ -34,11 +34,6 @@ namespace UrnaEletronica.API.Models
                 entity.HasKey(e => e.IdVoto)
                     .HasName("PK__Votos__550D2C7331F32EA6");
 
-                entity.HasOne(d => d.IdCandidatoNavigation)
-                    .WithMany(p => p.Votos)
-                    .HasForeignKey(d => d.IdCandidato)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Votos_Candidato");
             });
 
             OnModelCreatingPartial(modelBuilder);

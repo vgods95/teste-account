@@ -4,7 +4,7 @@ namespace UrnaEletronica.API.Interfaces
 {
     public interface IVoto
     {
-        void Adicionar(int voto);
+        void Adicionar(Votos voto);
         void Excluir(Votos voto);
         bool Salvar();
         Task<Votos> RetornarIdVoto(int id);

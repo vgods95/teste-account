@@ -8,6 +8,7 @@
         @foreach (var item in Model)
         {
             <div class="divCandidato">
+                <input id="idCandidato" hidden value="@item.IdCandidato">
                 <label>Presidente: <span>@item.NomeCandidato</span></label>
 
                 <label>Vice Presidente: <span>@item.NomeVice</span></label>

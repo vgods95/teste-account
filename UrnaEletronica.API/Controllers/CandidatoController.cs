@@ -24,7 +24,7 @@ namespace UrnaEletronica.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CadastrarCandidato([FromBody]Candidato candidato)
+        public async Task<ActionResult> CadastroDeCandidato(Candidato candidato)
         {
             _iCandidato.Adicionar(candidato);
             if (await _iCandidato.Salvar())

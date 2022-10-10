@@ -13,12 +13,12 @@ builder.Services.AddDbContext<UrnaEletronicaContext>(options => {
 
 var permiteOrigemEspecifica = "_myAllowSpecificOrigins";
 
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: permiteOrigemEspecifica,
-                      policy =>
+    options.AddPolicy("EnableCORS", policy =>
                       {
-                          policy.WithOrigins("https://localhost:7208");
+                          policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();
                       });
 });
 
@@ -39,11 +39,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(options => options.AllowAnyOrigin());   
+
+app.UseCors("EnableCORS");   
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-app.UseAuthentication();
 app.MapControllers();
 
 

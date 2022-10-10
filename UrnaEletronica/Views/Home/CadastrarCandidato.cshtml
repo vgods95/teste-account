@@ -2,20 +2,20 @@
 <script src="~/js/novoCandidato.js" type="text/javascript"></script>
 
 <div class="divEdicao">
-    <h1>Cadastrar novo candidato</h1>
-    <form class="formularioAlteracao">
-            <label for="nomeCandidato">Nome do Candidato: </label>
-            <input name="nomeCandidato" id="nomeCandidato" type="text" value="" />
+    <h1 id="titulo">Cadastrar novo candidato</h1>
+    <div class="formularioAlteracao">
+        <label for="nomeCandidato">Nome do Candidato: </label>
+        <input id="nomeCandidato" type="text" value="" />
 
-            <label for="nomeVice">Nome do Vice: </label>
-            <input id="nomeVice" name="nomeVice" type="text" value="" />
+        <label for="nomeVice">Nome do Vice: </label>
+        <input id="nomeVice" type="text" value="" />
 
         <label for="legendaCadastro">Legenda: </label>
-            <input id="legendaEdicao" name="legendaCadastro" type="text" value="" />
+        <input id="legendaCadastro" type="text" value="" />
 
         <div class="botoes">
-            <a onclick="adicionarCandidato()" style="background-color: green; cursor: pointer;">Finalizar</a>
+            <button onclick="adicionarCandidato()" style="background-color: green; cursor: pointer;">Finalizar</button>
             <button asp-controller="Home" asp-action="Index" style="background-color: red;">Cancelar</button>
         </div>
-    </form>
+    </div>
 </div>

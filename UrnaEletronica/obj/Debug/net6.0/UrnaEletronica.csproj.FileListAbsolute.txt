@@ -126,12 +126,8 @@ D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\UrnaEletronica.API.dll
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\UrnaEletronica.API.pdb
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\obj\Debug\net6.0\UrnaEletronica.csproj.AssemblyReference.cache
@@ -154,3 +150,10 @@ D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\obj\Debug\net6.0\refint\UrnaE
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\obj\Debug\net6.0\UrnaEletronica.pdb
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\obj\Debug\net6.0\UrnaEletronica.genruntimeconfig.cache
 D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\obj\Debug\net6.0\ref\UrnaEletronica.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\System.Web.Cors.dll
+D:\Desenvolvimentos\UrnaEletronica1\UrnaEletronica\bin\Debug\net6.0\System.Web.Http.Cors.dll

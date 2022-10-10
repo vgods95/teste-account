@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http.Headers;
-using System.Web.Http.Results;
+using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
+using System.Data;
 using UrnaEletronica.API.Interfaces;
 using UrnaEletronica.API.Models;
+using UrnaEletronica.API.SQL;
 
 namespace UrnaEletronica.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class VotoController : Controller
     {
         private readonly IVoto _voto;
@@ -20,24 +21,25 @@ namespace UrnaEletronica.API.Controllers
             _voto = voto;
             _contexto = contexto;
         }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Votos>>> Index()
+        [HttpGet("index")]
+        public ActionResult Index()
         {
-            return Json(await _voto.LerVotos());
+           
+            return View();
         }
 
-        [HttpPost("Votacao")]
-        [DisableCors]
-        public ActionResult Votar(int voto)
+        [HttpPost("votar")]
+        public ActionResult Votar(Votos votacao)
         {
-            _voto.Adicionar(voto);
+            _voto.Adicionar(votacao);
+
             if (_voto.Salvar())
             {
-                return Json(Results.Ok());
+                return Json(Results.Ok(votacao));
             }
             else
             {
-                return Json(BadRequest("Erro na requisicao"));
+                return Json(BadRequest("Ops, erro ao salvar"));
             }
 
         }
@@ -50,7 +52,7 @@ namespace UrnaEletronica.API.Controllers
             {
                 return Json("Voto Excluído com sucesso");
             }
-            return Json(BadRequest("Erro ao excluir voto"));
+            return RedirectToAction("Index", "Home");
         }
     }
 }

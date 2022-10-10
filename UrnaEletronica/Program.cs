@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICandidato, CandidatoRepository>();
+builder.Services.AddScoped<IVoto, VotoRepository>();
 
 builder.Services.AddDbContext<UrnaEletronicaContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao"));
@@ -34,6 +35,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=home}/{action=Index}/{id?}");
 
 app.Run();

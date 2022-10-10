@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JwAnoDInxBmHJgALxBe1PF/Q76hlVYAX7k7TFLwHfBU=",
+  "Hash": "Z80BZYLbOdOzJ1rPUJSkoro2NsBbPjOnszgqWY1fHvA=",
   "Source": "UrnaEletronica",
   "BasePath": "_content/UrnaEletronica",
   "Mode": "Default",
@@ -61,6 +61,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Desenvolvimentos\\UrnaEletronica1\\UrnaEletronica\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\UrnaEletronica.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Desenvolvimentos\\UrnaEletronica1\\UrnaEletronica\\wwwroot\\audio\\som.mp3",
+      "SourceId": "UrnaEletronica",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Desenvolvimentos\\UrnaEletronica1\\UrnaEletronica\\wwwroot\\",
+      "BasePath": "_content/UrnaEletronica",
+      "RelativePath": "audio/som.mp3",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\audio\\som.mp3"
     },
     {
       "Identity": "D:\\Desenvolvimentos\\UrnaEletronica1\\UrnaEletronica\\wwwroot\\css\\alteracao.css",

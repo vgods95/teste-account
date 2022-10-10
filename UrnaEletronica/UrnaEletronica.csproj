@@ -12,13 +12,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\Home\som.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\js\votar.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\som.mp3">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\Home\EditarCandidato.cshtml" />
     <None Include="wwwroot\js\novoCandidato.js" />
     <None Include="wwwroot\js\votar.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.9" />
   </ItemGroup>
 
   <ItemGroup>

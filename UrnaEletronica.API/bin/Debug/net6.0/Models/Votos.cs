@@ -10,17 +10,23 @@ namespace UrnaEletronica.API.Models
 {
     public partial class Votos
     {
+        public Votos()
+        {
+        }
+
         [Key]
         public int IdVoto { get; set; }
+        [Required(ErrorMessage = "O campo id Candidato é obrigatório")]
+        [ForeignKey("Candidato")]
+        public int? IdCandidato { get; set; }
+        public virtual Candidato Candidato { get; set; }
 
         [Column("QuantidadeVotos")]
+        [Required(ErrorMessage = "O campo Quantidade De Votos é obrigatório")]
         public int QuantidadeDeVotos { get; set; }
         [Column("Legenda")]
-        public int Legenda { get; set; }
-        public int IdCandidato { get; set; }
+        [Required(ErrorMessage = "O campo legenda é obrigatório")]
 
-        [ForeignKey("IdCandidato")]
-        [InverseProperty("Votos")]
-        public virtual Candidato IdCandidatoNavigation { get; set; }
+        public int Legenda { get; set; }
     }
 }

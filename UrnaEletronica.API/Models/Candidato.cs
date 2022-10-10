@@ -12,7 +12,7 @@ namespace UrnaEletronica.API.Models
     {
         public Candidato()
         {
-            Votos = new HashSet<Votos>();
+           
         }
 
         [Key]
@@ -32,8 +32,5 @@ namespace UrnaEletronica.API.Models
         public DateTime DataCadastro { get; set; }
 
         public int Legenda { get; set; }
-
-        [InverseProperty("IdCandidatoNavigation")]
-        public virtual ICollection<Votos> Votos { get; set; }
     }
 }

@@ -6,8 +6,18 @@
 <div class="divCorpo">
     <div class="tetoUrna"></div>
     <div class="Urna">
+       
         <div class="telaUrna">
             <div class="dadosCandidato" style="display: none;">
+                <label id="idCandidato" hidden></label>
+
+                <div>
+                    <label>Presidente: </label>&ensp; <h3 id="nomeCandidato"></h3>
+                </div>
+                <div>
+                    <label>Vice: </label>&ensp; <h3 id="nomeVice"></h3>
+                </div>
+               
             </div>
             <h3 class="tipoCandidato">Presidente</h3>
             <label id="legenda"></label>
@@ -31,7 +41,7 @@
                     }
                 </div>
                 <div class="botoesAcao">
-                    <button class="acao branco">Branco</button>
+                    <button class="acao branco" onclick="tocarAudio()">Branco</button>
                     <button class="acao limpa" onclick="limparTela()">Corrige</button>
                     <button type="submit" onclick="votar()" class="acao confirma">Confirma</button>
                 </div>
@@ -39,6 +49,8 @@
         </div>
     </div>
 </div>
+
+<script src="~/js/votar.js" asp-append-version="true"></script>
 
 <script type="text/javascript">
     function adicionarNumero(numero) {
@@ -49,6 +61,7 @@
         if ($("#legenda").html().length == 2) {
             $(".dadosCandidato").show(150)
             var legenda = $("#legenda").html()
+            var dados = "Sem dados"
 
             $(".tipoCandidato").hide()
             $("#legenda").hide()
@@ -58,47 +71,16 @@
                 data: { legenda: legenda },
                 cache: false,
                 success: function (datas) {
-                    $(".dadosCandidato").html(datas)
+                 $(datas).each(function(i){
+                        document.getElementById("nomeCandidato").innerHTML = datas[i].nomeCandidato
+                        document.getElementById("nomeVice").innerHTML = datas[i].nomeVice
+                        document.getElementById("idCandidato").innerHTML = datas[i].idCandidato
+                 })
+
                 },
                 error: function (xhr, status, error) { }
             })
         }
     }
-
-    async  function votar() {
-        var voto = Number($("#legenda").html())
-        const cabecalho = ['Content-type', 'application/json; charset=UTF-8']
-        const opcoes = {
-            method: 'Post',
-            headers: cabecalho,
-            mode: 'cors',
-            body: {voto: voto }
-        }
-        console.log(voto)
-        try {
-            
-            const resposta = await fetch("https://localhost:7004/api/Voto/Votacao/", {
-                    method: 'POST',
-                        mode: 'no-cors',
-                    body: {voto: 12}})
-            .then(function(response){
-                if(response.ok){
-                    $(".dadosCandidato").html("Fim")
-                    return response.text()
-                }
-                throw new Error("Houve erro na requisicao ")
-            })
-            .then(function(text){
-                console.log("Sucesso na requisição" + text)
-            })
-            .catch(function(erro){
-                console.log("ERRO DE REQ " + erro)
-            })
-        }
-        catch (erro) {
-            console.error(erro)
-        }
-    }
-    
 
 </script>

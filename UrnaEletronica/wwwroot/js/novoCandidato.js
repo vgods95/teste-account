@@ -1,34 +1,27 @@
 ﻿async function adicionarCandidato() {
-    var nome = document.getElementById("nomeCandidato")
-    var nomeVice = document.getElementById("nomeVice")
-    var legenda = document.getElementById("legendaCadastro")
-    var opcoes = {
-        method: 'POST',
-        mode: 'no-cors',    
-        body: JSON.stringify({
-            Nomecandidato: nome,
-            NomeVice: nomeVice,
-            Legenda: legenda
-        })
-    }
+    var nome = document.querySelector("nomeCandidato")
+    var nomeVice = document.querySelector("nomeVice")
+    var legenda = document.querySelector("legendaCadastro")
+    const candidato = JSON.stringify({
+        "nomeCandidato": nome,
+        "nomeVice": nomeVice,
+        "legenda": legenda
+    })
     try {
-
-        $.ajax({
-            type: "POST",
-            url: 'https://localhost:7208/Home/CadastroDeCandidato/',
-            data: { 
-                JSON({
-                NomeCandidato: nome,
-                NomeVice: nomeVice,
-                Legenda: legenda
-                })
-            },
-            cache: false,
-            success: function (datas) {
-                $(".dadosCandidato").html(datas)
-            },
-            error: function (xhr, status, error) { }
-        })
+        await fetch("https://localhost:7004/api/CadastroDeCandidato/", { method: 'POST', body: candidato })
+            .then(function (response) {
+                if (response.ok) {
+                    $("#titulo").html(response)
+                    return response.text()
+                }
+                throw new Error("Erro da requisição")
+            })
+            .then(function (text) {
+                console.log("Sucesso na requisição" + text)
+            })
+            .catch(function (erro) {
+                console.log("ERRO DE REQ " + erro)
+            })
     }
     catch (erro) {
         console.error(erro)
